@@ -1,0 +1,64 @@
+body {
+            font-family: "Inter", sans-serif;
+            /* Enhanced gradient background */
+            background: linear-gradient(to right bottom, #e0f2f7, #c1e4f0, #a2d6e9); /* Softer blue gradient */
+            min-height: 100vh; /* Ensure full viewport height */
+            display: flex;
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            padding: 2rem; /* Add padding around the body content */
+        }
+        .form-container {
+            max-width: 800px;
+            width: 100%; /* Ensure it takes full width on smaller screens */
+            margin: 0 auto; /* Center horizontally with auto margins */
+            padding: 3rem; /* Increased padding */
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+            border: 1px solid #d1d5db; /* Slightly darker border */
+        }
+        .form-input {
+            @apply block w-full px-4 py-2.5 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out;
+            background-color: #f9fafb; /* Light input background */
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 mb-1.5; /* Increased margin-bottom */
+        }
+        .form-group {
+            @apply mb-6; /* Increased margin-bottom for form groups */
+        }
+        .form-button {
+            @apply w-full px-6 py-3.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ease-in-out;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+            letter-spacing: 0.05em;
+            margin-top: 2rem; /* Added margin-top for separation */
+        }
+        .form-button:hover {
+            transform: translateY(-3px); /* Slightly more lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        .radio-checkbox-group {
+            @apply flex flex-wrap gap-x-6 gap-y-3; /* Adjusted gap for better spacing */
+        }
+        .radio-checkbox-item {
+            @apply flex items-center;
+        }
+        .radio-checkbox-input {
+            @apply h-4.5 w-4.5 text-blue-600 border-gray-300 focus:ring-blue-500 rounded; /* Slightly larger input */
+        }
+        .radio-checkbox-label {
+            @apply ml-2.5 text-base text-gray-800; /* Slightly larger text and margin */
+        }
+        /* Styles for section headers */
+        h3 {
+            border-left: 5px solid #3b82f6; /* Thicker blue border on the left */
+            padding-left: 1rem; /* Increased padding */
+            margin-bottom: 2rem; /* Increased margin-bottom */
+            color: #1f2937; /* Darker text for headers */
+        }
+        h2 {
+            margin-bottom: 2.5rem; /* Increased margin-bottom for main title */
+            color: #1a202c; /* Even darker text for main title */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+        }
