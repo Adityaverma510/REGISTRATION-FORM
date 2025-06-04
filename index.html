@@ -4,36 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Form</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom styles for better readability and aesthetics */
+        body {
+            font-family: "Inter", sans-serif;
+            /* Enhanced gradient background */
+            background: linear-gradient(to right bottom, #e0f2f7, #c1e4f0, #a2d6e9); /* Softer blue gradient */
+            min-height: 100vh; /* Ensure full viewport height */
+            display: flex;
+            flex-direction: column; /* Arrange content in a column */
+            align-items: center; /* Center content horizontally */
+            padding: 0; /* Remove body padding as header/footer will handle spacing */
+        }
+        /* Header specific styles */
+        .main-header {
+            width: 100%;
+            background-color: #1e3a8a; /* Dark blue background */
+            color: #ffffff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem; /* Space below header */
+        }
+        .main-header h1 {
+            font-size: 2.5rem; /* Larger font for header title */
+            font-weight: 700; /* Bold */
+            letter-spacing: 0.05em;
+        }
+
+        .form-container {
+            max-width: 800px;
+            width: 100%; /* Ensure it takes full width on smaller screens */
+            margin: 0 auto; /* Center horizontally with auto margins */
+            padding: 3rem; /* Increased padding */
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+            border: 1px solid #d1d5db; /* Slightly darker border */
+            flex-grow: 1; /* Allow form container to grow and fill space */
+            margin-bottom: 2rem; /* Space above footer */
+        }
+        .form-input {
+            @apply block w-full px-4 py-2.5 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out;
+            background-color: #f9fafb; /* Light input background */
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-700 mb-1.5; /* Increased margin-bottom */
+        }
+        .form-group {
+            @apply mb-6; /* Increased margin-bottom for form groups */
+        }
+        .form-button {
+            @apply w-full px-6 py-3.5 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ease-in-out;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+            letter-spacing: 0.05em;
+            margin-top: 2rem; /* Added margin-top for separation */
+        }
+        .form-button:hover {
+            transform: translateY(-3px); /* Slightly more lift on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        .radio-checkbox-group {
+            @apply flex flex-wrap gap-x-6 gap-y-3; /* Adjusted gap for better spacing */
+        }
+        .radio-checkbox-item {
+            @apply flex items-center;
+        }
+        .radio-checkbox-input {
+            @apply h-4.5 w-4.5 text-blue-600 border-gray-300 focus:ring-blue-500 rounded; /* Slightly larger input */
+        }
+        .radio-checkbox-label {
+            @apply ml-2.5 text-base text-gray-800; /* Slightly larger text and margin */
+        }
+        /* Styles for section headers */
+        h3 {
+            border-left: 5px solid #3b82f6; /* Thicker blue border on the left */
+            padding-left: 1rem; /* Increased padding */
+            margin-bottom: 2rem; /* Increased margin-bottom */
+            color: #1f2937; /* Darker text for headers */
+        }
+        .form-container h2 { /* Targeting the form's main title specifically */
+            margin-bottom: 2.5rem; /* Increased margin-bottom for main title */
+            color: #1a202c; /* Even darker text for main title */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+        }
+
+        /* Footer specific styles */
+        .main-footer {
+            width: 100%;
+            background-color: #374151; /* Dark gray background */
+            color: #d1d5db; /* Light gray text */
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: auto; /* Push footer to the bottom */
+        }
+    </style>
 </head>
 <body class="antialiased">
+    <!-- Header Section -->
+    <header class="main-header">
+        <h1>Student Enrollment Portal</h1>
+    </header>
+
     <div class="form-container">
         <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-8">Student Registration Form</h2>
         <form action="#" method="POST" class="space-y-6">
+            <!-- Personal Details Section -->
             <div class="border-b border-gray-200 pb-6 mb-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-4">Personal Details</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Full Name -->
                     <div class="form-group">
                         <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Aditya Verma" required>
+                        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="John Doe" required>
                     </div>
 
+                    <!-- Email Address -->
                     <div class="form-group">
                         <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="aditya@gmail.com" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john.doe@example.com" required>
                     </div>
 
+                    <!-- Phone Number -->
                     <div class="form-group">
                         <label for="phone" class="form-label">Phone Number</label>
                         <input type="tel" id="phone" name="phone" class="form-input" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" required>
                     </div>
 
+                    <!-- Date of Birth -->
                     <div class="form-group">
                         <label for="dob" class="form-label">Date of Birth</label>
                         <input type="date" id="dob" name="dob" class="form-input" required>
                     </div>
 
+                    <!-- Gender (Radio Buttons) -->
                     <div class="form-group md:col-span-2">
                         <label class="form-label">Gender</label>
                         <div class="radio-checkbox-group">
@@ -52,6 +160,7 @@
                         </div>
                     </div>
 
+                    <!-- Address (Textarea) -->
                     <div class="form-group md:col-span-2">
                         <label for="address" class="form-label">Residential Address</label>
                         <textarea id="address" name="address" rows="3" class="form-input" placeholder="1234 Main St, Anytown, State, Zip Code" required></textarea>
@@ -59,9 +168,11 @@
                 </div>
             </div>
 
+            <!-- Academic Details Section -->
             <div class="border-b border-gray-200 pb-6 mb-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-4">Academic Details</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Program of Interest (Dropdown) -->
                     <div class="form-group">
                         <label for="program" class="form-label">Program of Interest</label>
                         <select id="program" name="program" class="form-input" required>
@@ -75,6 +186,7 @@
                         </select>
                     </div>
 
+                    <!-- Preferred Courses (Checkboxes) -->
                     <div class="form-group md:col-span-2">
                         <label class="form-label">Preferred Courses (Select all that apply)</label>
                         <div class="radio-checkbox-group">
@@ -105,6 +217,7 @@
                         </div>
                     </div>
 
+                    <!-- Previous School/College -->
                     <div class="form-group md:col-span-2">
                         <label for="prevSchool" class="form-label">Previous School/College</label>
                         <input type="text" id="prevSchool" name="prevSchool" class="form-input" placeholder="High School Name" required>
@@ -112,14 +225,17 @@
                 </div>
             </div>
 
+            <!-- Additional Information Section -->
             <div class="pb-6 mb-6">
                 <h3 class="text-xl font-semibold text-gray-800 mb-4">Additional Information</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- How did you hear about us? (Text) -->
                     <div class="form-group md:col-span-2">
                         <label for="howHear" class="form-label">How did you hear about us?</label>
                         <input type="text" id="howHear" name="howHear" class="form-input" placeholder="e.g., Social Media, Friend, Advertisement">
                     </div>
 
+                    <!-- Any special needs/comments (Textarea) -->
                     <div class="form-group md:col-span-2">
                         <label for="comments" class="form-label">Any special needs or comments?</label>
                         <textarea id="comments" name="comments" rows="3" class="form-input" placeholder="e.g., dietary restrictions, accessibility needs"></textarea>
@@ -127,10 +243,17 @@
                 </div>
             </div>
 
+            <!-- Submit Button -->
             <div class="form-group">
                 <button type="submit" class="form-button">Submit Registration</button>
             </div>
         </form>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <p>&copy; 2025 Student Enrollment. All rights reserved.</p>
+        <p>Contact us: info@studentenrollment.com</p>
+    </footer>
 </body>
 </html>
